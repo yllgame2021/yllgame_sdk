@@ -6,7 +6,7 @@ SDK下载地址(请联系对接人获取)
 
 **需要安装cocoapods管理工具([参考](https://www.kancloud.cn/god-is-coder/cocoapods/617031))**
 
-**Xcode13.0+**
+**Xcode13.0+, iOS10.0+**
 
 **SDK不支持bitcode，项目请勿打开**
 
