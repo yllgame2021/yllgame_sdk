@@ -564,7 +564,7 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
         <!--将 ContentProvider 添加至 AndroidManifest.xml 文件，并将 {APP_ID} 设置为您的应用编号：-->
         <provider
             android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider157932462436275"
+            android:authorities="com.facebook.app.FacebookContentProvider{APP_ID}"
             android:exported="true" />
         <!--如果您的应用程序面向 Android 11 或更高版本，请向 AndroidManifest.xml 文件添加以下查询块，以使 Facebook 应用对您的应用可见-->
         <queries>
