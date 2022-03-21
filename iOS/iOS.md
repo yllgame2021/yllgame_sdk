@@ -474,9 +474,7 @@ NSString *SDKBuild = [[YllGameSDK getInstance] yg_getSDKBuild];
 - 提供了返回共同登录该应用的 facebook 好友列表接口
 
 ```obj-c
-[[YllGameSDK getInstance] yg_getFacebookFriendsWithCompleteHandle:^(NSArray<YGFBFriendInfoModel *> * _Nonnull list) {
-    <#code#>
-}];
+[[YllGameSDK getInstance] yg_getFacebookFriendsWithCompleteHandler:<#^(NSArray<YGFBFriendInfoModel *> * _Nonnull)completeHandler#>];
 ```
 
  ### 3.22 打开举报页面
@@ -493,9 +491,7 @@ NSString *SDKBuild = [[YllGameSDK getInstance] yg_getSDKBuild];
  ###  3.23 补单成功回调
 - 提供补单成功回调, 返回游戏方订单id
 ```obj-c
-[[YllGameSDK getInstance] yg_orderReplenishmentSuccessHandle:^(NSString * _Nonnull orderId) {
-      <#code#>
-}];
+[[YllGameSDK getInstance] yg_orderReplenishmentSuccessHandler:<#^(NSString * _Nonnull)successHandler#>];
 ```
         
 ### 3.24 打开展示房间/房间用户举报页面
