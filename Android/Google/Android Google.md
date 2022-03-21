@@ -346,7 +346,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void getPhoneBindState(YGBooleanCallBack callBack)
 ```
-### 4.2.1 获取活动信息
+### 4.2.0 获取活动信息
 - SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getActivityInfos ``
 ``` java 
     /**
