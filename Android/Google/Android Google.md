@@ -604,16 +604,6 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
     public void getFacebookFriends(Activity activity, YGCallBack<List<GameFacebookFriendEntity>> callBack)
 ```
 ### 10.2Facebook分享链接
-- Facebook分享链接的函数为：`` YGTripartiteApi.getInstance().openFacebookPage ``
-``` java 
-    /**
-     * Facebook公共页面
-     *
-     * @param pageId 账号id
-     */
-    public void openFacebookPage(String pageId)
-```
-### 10.3Facebook分享链接
 - Facebook分享链接的函数为：`` YGTripartiteApi.getInstance().shareLink ``
 ``` java 
     /**
@@ -625,6 +615,16 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
      * @param callback 分享回调
      */
     public void shareLink(Activity activity, String quote, String url, FacebookCallback<Sharer.Result> callback)
+```
+### 10.3Facebook公共页面
+- Facebook公共页面：`` YGTripartiteApi.getInstance().openFacebookPage ``
+``` java 
+    /**
+     * Facebook公共页面
+     *
+     * @param pageId 账号id
+     */
+    public void openFacebookPage(String pageId)
 ```
 ### 10.4阿里云上传图片
 文件读写权限获取：
