@@ -336,28 +336,6 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showRoomReportView(Activity activity, String reportType, String reportRoleId, String reportServiceId, String reportedRoleId, String reportedServiceId, String roomId)
 ```
-### 4.2.0 获取手机绑定状态
-- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getPhoneBindState ``
-``` java 
-    /**
-     * 获取手机绑定状态
-     *
-     * @param callBack true 已绑定手机 false 未绑定手机
-     */
-    public void getPhoneBindState(YGBooleanCallBack callBack)
-```
-### 4.2.0 获取活动信息
-- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getActivityInfos ``
-``` java 
-    /**
-     * 获取活动信息
-     *
-     * @param serviceId 服务器id
-     * @param roleId    角色id
-     * @param callBack  回调
-     */
-    public void getActivityInfos(String serviceId, String roleId, YGCallBack<List<GameActivityEntity>> callBack)
-```
 ## 5.支付
 ### 5.1 谷歌支付
 - SDK调起谷歌支付的函数为：`` YGPayApi.pay() ``
