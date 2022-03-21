@@ -230,7 +230,6 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void openAccountManager(Activity activity)
 ```
- 
 ### 4.1.2 修改昵称
  - SDK调起修改昵称的函数：``` YGUserApi.getInstance().showUpdateNickNameDialog() ```
 ``` java 
