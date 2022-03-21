@@ -1,4 +1,12 @@
 ## 版本更新纪录
+### SDK版本1.0.4.2
+1. 新增Facebook跳转公共界面api、增加获取活动api、增加获取绑定状态api
+2. 新增设置界面
+3. Facebook更新最新版本适配
+```
+api 'com.facebook.android:facebook-login:13.0.0'
+api 'com.facebook.android:facebook-share:13.0.0'
+```
 ### SDK版本1.0.4.1
 1. 新增账号被封禁自助解封
 2. 新增推送增根据环境推送
