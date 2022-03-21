@@ -220,7 +220,7 @@ public class YGReceiver extends BroadcastReceiver {
     public void silentGuestLogin()
 ```
 ## 4.用户
-### 4.1管理界面
+### 4.1.1 管理界面
 - SDK调起用户管理界面的函数：``` YGUserApi.getInstance().openAccountManager(this) ```
 ``` java 
     /**
@@ -231,7 +231,7 @@ public class YGReceiver extends BroadcastReceiver {
     public void openAccountManager(Activity activity)
 ```
  
-### 4.2修改昵称
+### 4.1.2 修改昵称
  - SDK调起修改昵称的函数：``` YGUserApi.getInstance().showUpdateNickNameDialog() ```
 ``` java 
     /**
@@ -242,7 +242,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showUpdateNickNameDialog(Activity activity, UpdateUserNameListener listener)
 ```
-### 4.3 同步用户角色
+### 4.1.3 同步用户角色
  - SDK调起同步用户角色的函数：``` YGUserApi.getInstance().syncRoleInfo(); ```
 ``` java 
     /**
@@ -265,7 +265,7 @@ public class YGReceiver extends BroadcastReceiver {
                              YGBooleanCallBack callback)
 ```
 **注：建议游戏每次登陆、角色创建、用户角色升级，用户VIP升级必须调用该函数**
-### 4.4检查SDK最新版本
+### 4.1.4检查SDK最新版本
 - SDK调起用户版本更新的函数为：`` YGUserApi.getInstance().getVersionInfo() ``
  ``` java 
      /**
@@ -273,7 +273,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void getVersionInfo()
  ```
-### 4.5 设置界面
+### 4.1.5 设置界面
 - SDK调起设置界面的函数为：`` YGUserApi.getInstance().showSettingsView ``
 ``` java
     /**
@@ -285,7 +285,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showSettingsView(Activity activity, String serviceId, String roleId)
 ```
-### 4.6客服&FAQ
+### 4.1.6客服&FAQ
 - SDK调起客服&FAQ的函数为：`` YGUserApi.getInstance().showServiceChatView ``
   ``` java 
       /**
@@ -297,7 +297,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showServiceChatView(Activity activity, String serviceId, String roleId)
   ```
-### 4.7账号升级提示
+### 4.1.7账号升级提示
 - SDK调起账号升级的函数为：`` YGUserApi.getInstance().checkBindStat ``
 ``` java 
     /**
@@ -308,7 +308,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public boolean checkBindStat(Activity activity)
 ```
-### 4.8游戏举报
+### 4.1.8游戏举报
 - SDK调起游戏举报的函数为：`` YGUserApi.getInstance().showReportView ``
 ``` java 
     /**
@@ -321,7 +321,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showReportView(Activity activity, String reportRoleId, String reportedRoleId, String serviceId)
 ```
-### 4.9语聊举报
+### 4.1.9语聊举报
 - SDK调起语聊举报的函数为：`` YGUserApi.getInstance().showRoomReportView ``
 ``` java 
     /**
@@ -336,6 +336,28 @@ public class YGReceiver extends BroadcastReceiver {
      * @param roomId            房间Id
      */
     public void showRoomReportView(Activity activity, String reportType, String reportRoleId, String reportServiceId, String reportedRoleId, String reportedServiceId, String roomId)
+```
+### 4.2.0 获取手机绑定状态
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getPhoneBindState ``
+``` java 
+    /**
+     * 获取手机绑定状态
+     *
+     * @param callBack true 已绑定手机 false 未绑定手机
+     */
+    public void getPhoneBindState(YGBooleanCallBack callBack)
+```
+### 4.2.0 获取活动信息
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getActivityInfos ``
+``` java 
+    /**
+     * 获取活动信息
+     *
+     * @param serviceId 服务器id
+     * @param roleId    角色id
+     * @param callBack  回调
+     */
+    public void getActivityInfos(String serviceId, String roleId, YGCallBack<List<GameActivityEntity>> callBack)
 ```
 ## 5.支付
 ### 5.1 谷歌支付
