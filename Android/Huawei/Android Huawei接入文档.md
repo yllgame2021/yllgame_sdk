@@ -29,19 +29,23 @@
    ``` Groovy
    //Android X支持库  必须添加
     api 'androidx.appcompat:appcompat:1.2.0'
-    api 'com.google.android.material:material:1.3.0'
     //okhttp网络请求库 必须添加
     api("com.squareup.okhttp3:okhttp:4.9.0")
     //gson数据解析库 必须添加
     api 'com.google.code.gson:gson:2.8.5'
     //Facebook登陆依赖库 必须添加
-    api 'com.facebook.android:facebook-login:11.0.0'
+    api 'com.facebook.android:facebook-login:13.0.0'
     //Facebook分享
-    api 'com.facebook.android:facebook-share:11.0.0'
+    api 'com.facebook.android:facebook-share:13.0.0'
+    //Google登陆依赖库 必须添加
+    api 'com.google.android.gms:play-services-auth:19.0.0'
+    api "com.google.android.gms:play-services-ads-identifier:17.0.0"
+    //Google支付依赖库 必须添加
+    api "com.android.billingclient:billing:4.0.0"
     //数据库依赖库 必须添加
     def room_version = "2.2.5"
     api "androidx.room:room-runtime:$room_version"
-    api "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
     api "net.zetetic:android-database-sqlcipher:4.4.2"
     //数据统计依赖库 必须添加
     api 'com.appsflyer:af-android-sdk:6.2.3@aar'
@@ -51,16 +55,17 @@
     api platform('com.google.firebase:firebase-bom:26.4.0')
     api 'com.google.firebase:firebase-messaging'
     api 'com.google.firebase:firebase-analytics'
-    //华为登陆 hms
-    api 'com.huawei.hms:hwid:5.2.0.300'
-    //华为支付 hms
-    api 'com.huawei.hms:iap:5.1.0.300'
-    api 'com.huawei.hms:ads-identifier:3.4.39.302'
+    api 'com.google.firebase:firebase-core:16.0.1'
+    api 'com.aliyun.dpa:oss-android-sdk:2.9.9'
     //Bugly
     api 'com.tencent.bugly:crashreport:3.3.92'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     api 'com.tencent.bugly:nativecrashreport:3.9.0'
-    //阿里云OSS
-    api 'com.aliyun.dpa:oss-android-sdk:2.9.9'
+    //华为登陆 hms
+    api 'com.huawei.hms:hwid:5.2.0.300'
+    api 'com.huawei.hms:ads-identifier:3.4.39.302'
+    //华为支付 hms
+    api 'com.huawei.hms:iap:5.1.0.300'
  ```
 
 ## 2.项目配置，初始化
@@ -212,7 +217,7 @@ public class YGReceiver extends BroadcastReceiver {
     public void login(Activity activity)
 ```
 ## 4.用户
-### 4.1管理界面
+### 4.1.1 管理界面
 - SDK调起用户管理界面的函数：``` YGUserApi.getInstance().openAccountManager(this) ```
 ``` java 
     /**
@@ -222,8 +227,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void openAccountManager(Activity activity)
 ```
- 
-### 4.2修改昵称
+### 4.1.2 修改昵称
  - SDK调起修改昵称的函数：``` YGUserApi.getInstance().showUpdateNickNameDialog() ```
 ``` java 
     /**
@@ -234,7 +238,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showUpdateNickNameDialog(Activity activity, UpdateUserNameListener listener)
 ```
-### 4.3 同步用户角色
+### 4.1.3 同步用户角色
  - SDK调起同步用户角色的函数：``` YGUserApi.getInstance().syncRoleInfo(); ```
 ``` java 
     /**
@@ -257,7 +261,7 @@ public class YGReceiver extends BroadcastReceiver {
                              YGBooleanCallBack callback)
 ```
 **注：建议游戏每次登陆、角色创建、用户角色升级，用户VIP升级必须调用该函数**
-### 4.4检查SDK最新版本
+### 4.1.4检查SDK最新版本
 - SDK调起用户版本更新的函数为：`` YGUserApi.getInstance().getVersionInfo() ``
  ``` java 
      /**
@@ -265,7 +269,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void getVersionInfo()
  ```
-### 4.5 设置界面
+### 4.1.5 设置界面
 - SDK调起设置界面的函数为：`` YGUserApi.getInstance().showSettingsView ``
 ``` java
     /**
@@ -277,7 +281,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showSettingsView(Activity activity, String serviceId, String roleId)
 ```
-### 4.6客服&FAQ
+### 4.1.6客服&FAQ
 - SDK调起客服&FAQ的函数为：`` YGUserApi.getInstance().showServiceChatView ``
   ``` java 
       /**
@@ -289,7 +293,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showServiceChatView(Activity activity, String serviceId, String roleId)
   ```
-### 4.7账号升级提示
+### 4.1.7账号升级提示
 - SDK调起账号升级的函数为：`` YGUserApi.getInstance().checkBindStat ``
 ``` java 
     /**
@@ -300,11 +304,11 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public boolean checkBindStat(Activity activity)
 ```
-### 4.8举报入口
-- SDK调起举报入口的函数为：`` YGUserApi.getInstance().showReportView ``
+### 4.1.8游戏举报
+- SDK调起游戏举报的函数为：`` YGUserApi.getInstance().showReportView ``
 ``` java 
     /**
-     * 举报入口
+     * 游戏举报
      *
      * @param activity       当前activity
      * @param reportRoleId   举报者角色id
@@ -313,7 +317,7 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showReportView(Activity activity, String reportRoleId, String reportedRoleId, String serviceId)
 ```
-### 4.9语聊举报
+### 4.1.9语聊举报
 - SDK调起语聊举报的函数为：`` YGUserApi.getInstance().showRoomReportView ``
 ``` java 
     /**
@@ -328,6 +332,28 @@ public class YGReceiver extends BroadcastReceiver {
      * @param roomId            房间Id
      */
     public void showRoomReportView(Activity activity, String reportType, String reportRoleId, String reportServiceId, String reportedRoleId, String reportedServiceId, String roomId)
+```
+### 4.2.0 获取手机绑定状态
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getPhoneBindState ``
+``` java 
+    /**
+     * 获取手机绑定状态
+     *
+     * @param callBack true 已绑定手机 false 未绑定手机
+     */
+    public void getPhoneBindState(YGBooleanCallBack callBack)
+```
+### 4.2.1 获取活动信息
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().getActivityInfos ``
+``` java 
+    /**
+     * 获取活动信息
+     *
+     * @param serviceId 服务器id
+     * @param roleId    角色id
+     * @param callBack  回调
+     */
+    public void getActivityInfos(String serviceId, String roleId, YGCallBack<List<GameActivityEntity>> callBack)
 ```
 ## 5.支付
 ### 5.1 导入华为json文件 配置清单文件信息
