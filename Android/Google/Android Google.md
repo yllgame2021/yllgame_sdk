@@ -29,15 +29,14 @@
    ``` Groovy
    //Android X支持库  必须添加
     api 'androidx.appcompat:appcompat:1.2.0'
-    api 'com.google.android.material:material:1.3.0'
     //okhttp网络请求库 必须添加
     api("com.squareup.okhttp3:okhttp:4.9.0")
     //gson数据解析库 必须添加
     api 'com.google.code.gson:gson:2.8.5'
     //Facebook登陆依赖库 必须添加
-    api 'com.facebook.android:facebook-login:11.0.0'
+    api 'com.facebook.android:facebook-login:13.0.0'
     //Facebook分享
-    api 'com.facebook.android:facebook-share:11.0.0'
+    api 'com.facebook.android:facebook-share:13.0.0'
     //Google登陆依赖库 必须添加
     api 'com.google.android.gms:play-services-auth:19.0.0'
     api "com.google.android.gms:play-services-ads-identifier:17.0.0"
@@ -46,21 +45,22 @@
     //数据库依赖库 必须添加
     def room_version = "2.2.5"
     api "androidx.room:room-runtime:$room_version"
-    api "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
     api "net.zetetic:android-database-sqlcipher:4.4.2"
     //数据统计依赖库 必须添加
-    api 'com.appsflyer:af-android-sdk:6.2.3@aar' 
-    api 'com.appsflyer:oaid:6.2.4' 
+    api 'com.appsflyer:af-android-sdk:6.2.3@aar'
+    api 'com.appsflyer:oaid:6.2.4'
     api 'com.android.installreferrer:installreferrer:2.2'
     //FCM 推送相关
     api platform('com.google.firebase:firebase-bom:26.4.0')
     api 'com.google.firebase:firebase-messaging'
     api 'com.google.firebase:firebase-analytics'
+    api 'com.google.firebase:firebase-core:16.0.1'
+    api 'com.aliyun.dpa:oss-android-sdk:2.9.9'
     //Bugly
     api 'com.tencent.bugly:crashreport:3.3.92'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     api 'com.tencent.bugly:nativecrashreport:3.9.0'
-    //阿里云OSS
-    api 'com.aliyun.dpa:oss-android-sdk:2.9.9'
  ```
 
 ## 2.项目配置，初始化
