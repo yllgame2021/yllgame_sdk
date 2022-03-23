@@ -30,6 +30,7 @@ SDK下载地址(请联系对接人获取)
   pod 'AppsFlyerFramework', '~> 6.2.5'
   pod 'GoogleSignIn', '~> 5.0.2'
   pod 'Bugly', '~> 2.5.90'
+  pod 'AliyunOSSiOS', '~> 2.10.12'
 ```
 
 
