@@ -640,7 +640,6 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
 ``` java 
     /**
      * Facebook公共页面
-     *
      * @param pageId 账号id
      */
     public void openFacebookPage(Activity activity,String pageId)
