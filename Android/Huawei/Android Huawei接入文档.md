@@ -281,17 +281,15 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void showSettingsView(Activity activity, String serviceId, String roleId)
 ```
-### 4.1.6客服&FAQ
-- SDK调起客服&FAQ的函数为：`` YGUserApi.getInstance().showServiceChatView ``
+### 4.1.6展示绑定界面
+- SDK展示绑定界面的函数为：`` YGUserApi.getInstance().showAccountBindView ``
   ``` java 
-      /**
-     * 客服中心
+     /**
+     * 展示绑定界面
      *
-     * @param activity  当前activity
-     * @param serviceId 角色服务器id
-     * @param roleId    角色id
+     * @param activity
      */
-    public void showServiceChatView(Activity activity, String serviceId, String roleId)
+    public void showAccountBindView(Activity activity)
   ```
 ### 4.1.7账号升级提示
 - SDK调起账号升级的函数为：`` YGUserApi.getInstance().checkBindStat ``
@@ -645,7 +643,7 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
      *
      * @param pageId 账号id
      */
-    public void openFacebookPage(String pageId)
+    public void openFacebookPage(Activity activity,String pageId)
 ```
 ### 10.4阿里云上传图片
 文件读写权限获取：
