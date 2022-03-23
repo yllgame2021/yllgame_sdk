@@ -688,12 +688,10 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
         YGTripartiteApi.getInstance().updatePicture(this, new YGCallBack<String>() {
             @Override
             public void onSuccess(String s) {
-                LogUtils.logEForDeveloper("图片：" + s);
             }
 
             @Override
             public void onFail(int code) {
-
             }
         });
     }
