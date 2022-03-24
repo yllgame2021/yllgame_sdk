@@ -546,3 +546,10 @@ NSString *SDKBuild = [[YllGameSDK getInstance] yg_getSDKBuild];
 /// @param completeHandler 跳转结果 true = 成功, false = 失败
 [[YllGameSDK getInstance] yg_openFacebookPageWithPageId:<#(nonnull NSString *)#> completeHandler:<#^(BOOL)completeHandler#>];
 ```
+      
+### 3.29 展示账号绑定页面
+      
+```obj-c
+/// 展示账号绑定页面
+[[YllGameSDK getInstance] yg_showAccountBindView];
+```
