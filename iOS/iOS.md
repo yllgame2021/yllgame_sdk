@@ -551,5 +551,5 @@ NSString *SDKBuild = [[YllGameSDK getInstance] yg_getSDKBuild];
       
 ```obj-c
 /// 展示账号绑定页面
-[[YllGameSDK getInstance] yg_showAccountBindView];
+[[YllGameSDK getInstance] yg_showAccountBindViewWithCompleteHandler:<#^(YGUserAcccountBindModel * _Nonnull)completeHandler#>];
 ```
