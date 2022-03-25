@@ -181,6 +181,7 @@ public class YGLoginReceiver extends BroadcastReceiver {
             android:exported="true">
             <intent-filter>
                 <action android:name="com.yllgame.sdk.payDropOrderReceiver" />
+             <action android:name="com.yllgame.sdk.accountBindReceiver" />
             </intent-filter>
         </receiver>
 ```
@@ -191,6 +192,14 @@ public class YGReceiver extends BroadcastReceiver {
         if (intent.getAction() == YGConstants.BROADCAST_RECEIVER_PAY_DROP_ORDER_ACTION) {
             String orderId = intent.getExtras().getString(YGConstants.BROADCAST_RECEIVER_PAY_ORDER_ID_KEY);
             LogUtils.logEForDeveloper("游戏充值订单编号：" + orderId);
+        } else if (intent.getAction() == YGConstants.BROADCAST_RECEIVER_ACCOUNT_BIND_ACTION) {
+            GameUserAccountBindEntity gameUserAccountBindEntity = (GameUserAccountBindEntity) intent.getExtras().getSerializable(YGConstants.BROADCAST_RECEIVER_ACCOUNT_BIND_INFO_KEY);
+            /**
+             *     private int isBindFacebook = 1 绑定facebook
+             *     private int isBindGoogle = 1 绑定谷歌
+             *     private int isBindPhone = 1 绑定手机
+             *     private int isBindHuaWei = 1 绑定华为
+             */
         }
     }
 }
