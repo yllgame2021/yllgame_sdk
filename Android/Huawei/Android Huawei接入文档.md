@@ -209,7 +209,7 @@ public class YGReceiver extends BroadcastReceiver {
     }
 }
 ```
-注：该广播只针对有补单通知需求的游戏，开发者根据需求选择接入
+注：YGReceiver为固定写法，该广播放在项目包名.ygapi下
 ### 2.6 设置allowBackup配置
 ``` android:allowBackup="false" ```</br>
 **注：新生成的项目allowBackup为true须在项目的AndroidManifest中application设置allowBackup为false**
