@@ -676,6 +676,12 @@ event_name分为游戏通用埋点和自定义埋点的事件名称
 ```
 - 阿里云上传图片的函数为：`` YGTripartiteApi.getInstance().updatePicture ``
 ``` java 
+        /**
+     * 阿里云上传图片
+     * @param activity  当前Activity
+     * @param clipRatio 裁剪比例, {@link YGConstants#CLIP_RATIO_NONE} 表示不裁剪 {@link YGConstants#CLIP_RATIO_1_1} 裁剪
+     * @param callBack  上传回调返回图片绝对路劲
+     */
     public void updatePicture(Activity activity, int clipRatio, YGCallBack<String> callBack)
 ```
 代码示例
