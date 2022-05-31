@@ -5,9 +5,7 @@
 2. 新增获取手机号绑定状态函数 (具体请查阅 iOS接入文档 -> 3.27 获取手机号绑定状态)
 3. 新增跳转到指定用户的facebook主页函数 (具体请查阅 iOS接入文档 -> 3.28 跳转到facebook主页)
 4. 新增展示账号绑定页面函数 (具体请查阅 iOS接入文档 -> 3.29 展示账号绑定页面)
-5. 提升facebook pod版本, 从v9.1.0提升至v12.3.2
-   pod 'FBSDKLoginKit', '~> 12.3.2'
-   pod 'FBSDKShareKit', '~> 12.3.2' 
+5. 提升 facebook pod版本, FBSDKLoginKit 和 FBSDKShareKit 从 v9.1.0 提升至 v12.3.2
 6. 删除打开客服接口函数
 
 - v1.0.4.1
