@@ -37,7 +37,7 @@ SDK下载地址(请联系对接人获取)
 - 去掉use_frameworks!前的#
 - 在工程的相对应的 `Targets` -> `Build Settings` 的 `Other Linker Flags` ，添加`$(inherited)`
 - 然后执行 pod install
-
+- 打开 [工程名].xcworkspace 文件
 
 #### 3. 配置Game Center、推送和内购配置
 - 将`GoogleService-Info.plist`文件拖入项目，并配置以下选项
