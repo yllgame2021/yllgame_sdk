@@ -553,3 +553,10 @@ NSString *SDKBuild = [[YllGameSDK getInstance] yg_getSDKBuild];
 /// 展示账号绑定页面
 [[YllGameSDK getInstance] yg_showAccountBindViewWithCompleteHandler:<#^(YGUserAcccountBindModel * _Nonnull)completeHandler#>];
 ```
+      
+### 3.30 展示手机号绑定页面
+      
+```obj-c
+/// 展示账号绑定页面
+[[YllGameSDK getInstance] yg_showPhoneBindViewWithCompleteHandler:<#^(BOOL)completeHandler#>];
+```
