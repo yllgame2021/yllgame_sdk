@@ -365,6 +365,17 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void getActivityInfos(String serviceId, String roleId, YGCallBack<List<GameActivityEntity>> callBack)
 ```
+### 4.2.2 展示手机号绑定页面
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().showPhoneBindView ``
+``` java 
+    /**
+     * 显示绑定界面
+     *
+     * @param activity          当前Activity
+     * @param ygBooleanCallBack true：绑定成功
+     */
+    public void showPhoneBindView(Activity activity, YGBooleanCallBack ygBooleanCallBack)
+```
 ## 5.支付
 ### 5.1 谷歌支付
 - SDK调起谷歌支付的函数为：`` YGPayApi.pay() ``
