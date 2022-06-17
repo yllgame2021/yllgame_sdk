@@ -362,6 +362,17 @@ public class YGReceiver extends BroadcastReceiver {
      */
     public void getActivityInfos(String serviceId, String roleId, YGCallBack<List<GameActivityEntity>> callBack)
 ```
+### 4.2.2 展示手机号绑定页面
+- SDK调起语聊举报的函数为：`` YGUserApi.getInstance().showPhoneBindView ``
+``` java 
+    /**
+     * 显示绑定界面
+     *
+     * @param activity          当前Activity
+     * @param ygBooleanCallBack true：绑定成功
+     */
+    public void showPhoneBindView(Activity activity, YGBooleanCallBack ygBooleanCallBack)
+```
 ## 5.支付
 ### 5.1 导入华为json文件 配置清单文件信息
 - 导入agconnect-services.json文件，文件需找运营方要 </br>
